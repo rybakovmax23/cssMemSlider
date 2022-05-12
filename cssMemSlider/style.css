@@ -22,8 +22,7 @@ body {
 input {
   width: 0;
   height: 0;
-  opacity: 0
-  git;
+  visibility: hidden;
 }
 .images-container {
   overflow: hidden;
