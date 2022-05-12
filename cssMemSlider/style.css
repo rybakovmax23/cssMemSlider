@@ -60,15 +60,14 @@ input {
 .slide5 {
   background-image: url(./assets/5.jpg);
 }
-.text-buttons {
+.buttons-text {
   display: flex;
-  padding: 1em;
+  padding: 1em 0;
 }
 .texts {
   display: flex;
   overflow: hidden;
   width: 100%;
-  text-align: center;
 }
 .text {
   transition: 0.5s;
@@ -78,20 +77,18 @@ input {
   font-size: 2rem;
 }
 .buttons {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 1em 0;
+    display: flex;
+    align-items: flex-start;
+    order: 2;
 }
 .button-switch {
-    padding: 0.5em;
+  padding: 0.5em;
   cursor: pointer;
 }
 .switch {
   display: block;
   width: 1.5em;
   height: 1.5em;
-  /* border: 1px solid black; */
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.5s;
@@ -102,46 +99,55 @@ input {
 .button-switch:active .switch {
   background-color: yellow;
 }
-#button1:checked ~ .texts .text1,
+#button1:checked ~ .buttons-text .texts .text1,
 #button1:checked ~ .images-container .images {
   margin-left: 0;
 }
-#button2:checked ~ .texts .text1,
+#button2:checked ~ .buttons-text .texts .text1,
 #button2:checked ~ .images-container .images {
   margin-left: -100%;
 }
-#button3:checked ~ .texts .text1,
+#button3:checked ~ .buttons-text .texts .text1,
 #button3:checked ~ .images-container .images {
   margin-left: -200%;
 }
-#button4:checked ~ .texts .text1,
+#button4:checked ~ .buttons-text .texts .text1,
 #button4:checked ~ .images-container .images {
   margin-left: -300%;
 }
-#button5:checked ~ .texts .text1,
+#button5:checked ~ .buttons-text .texts .text1,
 #button5:checked ~ .images-container .images {
   margin-left: -400%;
 }
 
-#button1:checked ~ .buttons .button-switch .switch1,
-#button2:checked ~ .buttons .button-switch .switch2,
-#button3:checked ~ .buttons .button-switch .switch3,
-#button4:checked ~ .buttons .button-switch .switch4,
-#button5:checked ~ .buttons .button-switch .switch5 {
+#button1:checked ~ .buttons-text .buttons .button-switch .switch1,
+#button2:checked ~ .buttons-text .buttons .button-switch .switch2,
+#button3:checked ~ .buttons-text .buttons .button-switch .switch3,
+#button4:checked ~ .buttons-text .buttons .button-switch .switch4,
+#button5:checked ~ .buttons-text .buttons .button-switch .switch5 {
   background-color: #ffffff;
 }
 
-@media screen and (max-width: 768px){
-    .container{
-        padding: 0 1em;
-    }
-    .slider{
-        width: 100%;
-    }
-    .images-container{
-        height: calc((100vw - 2em) * 0.7);
-    }
-    .text{
-        font-size: 1em;
-    }
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1em;
+  }
+  .slider {
+    width: 100%;
+  }
+  .images-container {
+    height: calc((100vw - 2em) * 0.7);
+  }
+  .buttons-text{
+      flex-direction: column-reverse;
+      gap: 1em;
+  }
+  .buttons{
+    margin: 0 auto;
+  }
+  .text {
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+  }
 }
