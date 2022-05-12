@@ -8,6 +8,7 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 2em;
+  max-width: 80rem;
 }
 .title {
   text-align: center;
@@ -15,7 +16,7 @@ body {
 .slider {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 42em;
   margin: 0 auto;
 }
 input {
@@ -80,19 +81,19 @@ input {
   display: flex;
   justify-content: center;
   width: 100%;
+  margin: 1em 0;
 }
 .button-switch {
-  padding: 10px;
+    padding: 0.5em;
   cursor: pointer;
 }
 .switch {
   display: block;
   width: 1.5em;
   height: 1.5em;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 20px rgb(0 0 0 / 50%);
   transition: 0.5s;
 }
 .button-switch:hover .switch {
@@ -128,4 +129,19 @@ input {
 #button4:checked ~ .buttons .button-switch .switch4,
 #button5:checked ~ .buttons .button-switch .switch5 {
   background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        padding: 0 1em;
+    }
+    .slider{
+        width: 100%;
+    }
+    .images-container{
+        height: calc((100vw - 2em) * 0.7);
+    }
+    .text{
+        font-size: 1em;
+    }
 }
