@@ -1,0 +1,153 @@
+body {
+  background-image: url(./assets/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 2em;
+  max-width: 80rem;
+}
+.title {
+  text-align: center;
+}
+.slider {
+  display: flex;
+  flex-direction: column;
+  width: 42em;
+  margin: 0 auto;
+}
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.images-container {
+  overflow: hidden;
+  width: 100%;
+  height: 25em;
+  margin: 0 auto;
+  border-radius: 1rem;
+}
+.images {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.slide1 {
+  background-image: url(./assets/1.jpg);
+}
+.slide2 {
+  background-image: url(./assets/2.jpg);
+}
+.slide3 {
+  background-image: url(./assets/3.jpg);
+}
+.slide4 {
+  background-image: url(./assets/4.jpg);
+}
+.slide5 {
+  background-image: url(./assets/5.jpg);
+}
+.buttons-text {
+  display: flex;
+  padding: 1em 0;
+}
+.texts {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.text {
+  transition: 0.5s;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  font-size: 2rem;
+}
+.buttons {
+    display: flex;
+    align-items: flex-start;
+    order: 2;
+}
+.button-switch {
+  padding: 0.5em;
+  cursor: pointer;
+}
+.switch {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+.button-switch:hover .switch {
+  background-color: grey;
+}
+.button-switch:active .switch {
+  background-color: yellow;
+}
+#button1:checked ~ .buttons-text .texts .text1,
+#button1:checked ~ .images-container .images {
+  margin-left: 0;
+}
+#button2:checked ~ .buttons-text .texts .text1,
+#button2:checked ~ .images-container .images {
+  margin-left: -100%;
+}
+#button3:checked ~ .buttons-text .texts .text1,
+#button3:checked ~ .images-container .images {
+  margin-left: -200%;
+}
+#button4:checked ~ .buttons-text .texts .text1,
+#button4:checked ~ .images-container .images {
+  margin-left: -300%;
+}
+#button5:checked ~ .buttons-text .texts .text1,
+#button5:checked ~ .images-container .images {
+  margin-left: -400%;
+}
+
+#button1:checked ~ .buttons-text .buttons .button-switch .switch1,
+#button2:checked ~ .buttons-text .buttons .button-switch .switch2,
+#button3:checked ~ .buttons-text .buttons .button-switch .switch3,
+#button4:checked ~ .buttons-text .buttons .button-switch .switch4,
+#button5:checked ~ .buttons-text .buttons .button-switch .switch5 {
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1em;
+  }
+  .slider {
+    width: 100%;
+  }
+  .images-container {
+    height: calc((100vw - 2em) * 0.7);
+  }
+  .buttons-text{
+      flex-direction: column-reverse;
+      gap: 1em;
+  }
+  .buttons{
+    margin: 0 auto;
+  }
+  .text {
+    font-size: 1em;
+    font-weight: 600;
+  }
+}
